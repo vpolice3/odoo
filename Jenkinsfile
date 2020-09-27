@@ -1,9 +1,9 @@
 pipeline{
   agent any
   stages{
-    satge('Build images'){
+    satge('Git SCM'){
       sh '''
-        docker build -f "Dockerfile" -t vikaspolicedockerhub/odoo:latest .
+        git url "https://github.com/vpolice3/odoo.git"
       '''
     }
   }
