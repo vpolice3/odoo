@@ -5,3 +5,4 @@ stages{
   sh 'git url "https://github.com/vpolice3/odoo.git"'  
     }
   }
+}
