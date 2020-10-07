@@ -1,13 +1,9 @@
-pipeline{
-  agent any
-stages{
-    stage('Git SCM'){
-      options {
-              timeout(time: 1, unit: 'HOURS')   // timeout on this stage
-          }
-      steps{
-       sh'git url "https://github.com/vpolice3/odoo.git"'  
-      }
-    }
-  }
+timestamps {
+
+node () {
+
+	stage ('odoo - Checkout') {
+ 	 checkout([$class: 'GitSCM', branches: [[name: '*/13.0']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github credentials', url: 'https://github.com/vpolice3/odoo.git']]]) 
+	}
+}
 }
