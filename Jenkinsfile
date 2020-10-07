@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
-        sh 'git url ""'
+        sh 'git url "https://github.com/vpolice3/odoo.git"'
       }
     }
   }
